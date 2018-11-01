@@ -11,6 +11,7 @@ node_js:
   - "10"
 env:
   - TEST_ENV=cjs
+  - TEST_ENV=esm
   - TEST_ENV=umd
   - TEST_ENV=source
 install:
