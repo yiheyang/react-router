@@ -8,61 +8,66 @@ function isModifiedEvent(event) {
   return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
 }
 
+function LinkAnchor({ innerRef, navigate, onClick, ...rest }) {
+  const { target } = rest;
+
+  return (
+    <a
+      {...rest}
+      ref={innerRef} // TODO: Use forwardRef instead
+      onClick={event => {
+        if (onClick) onClick(event);
+
+        if (
+          !event.defaultPrevented && // onClick prevented default
+          event.button === 0 && // ignore everything but left clicks
+          (!target || target === "_self") && // let browser handle "target=_blank" etc.
+          !isModifiedEvent(event) // ignore clicks with modifier keys
+        ) {
+          event.preventDefault();
+          navigate();
+        }
+      }}
+    />
+  );
+}
+
 /**
  * The public API for rendering a history-aware <a>.
  */
-class Link extends React.Component {
-  handleClick(event, history) {
-    if (this.props.onClick) this.props.onClick(event);
+function Link({ component = LinkAnchor, replace, to, ...rest }) {
+  return (
+    <RouterContext.Consumer>
+      {context => {
+        invariant(context, "You should not use <Link> outside a <Router>");
 
-    if (
-      !event.defaultPrevented && // onClick prevented default
-      event.button === 0 && // ignore everything but left clicks
-      (!this.props.target || this.props.target === "_self") && // let browser handle "target=_blank" etc.
-      !isModifiedEvent(event) // ignore clicks with modifier keys
-    ) {
-      event.preventDefault();
+        const { history } = context;
 
-      const method = this.props.replace ? history.replace : history.push;
+        const location =
+          typeof to === "string"
+            ? createLocation(to, null, null, context.location)
+            : to;
+        const href = location ? history.createHref(location) : "";
 
-      method(this.props.to);
-    }
-  }
-
-  render() {
-    const { innerRef, replace, to, ...rest } = this.props; // eslint-disable-line no-unused-vars
-
-    return (
-      <RouterContext.Consumer>
-        {context => {
-          invariant(context, "You should not use <Link> outside a <Router>");
-
-          const location =
-            typeof to === "string"
-              ? createLocation(to, null, null, context.location)
-              : to;
-          const href = location ? context.history.createHref(location) : "";
-
-          return (
-            <a
-              {...rest}
-              onClick={event => this.handleClick(event, context.history)}
-              href={href}
-              ref={innerRef}
-            />
-          );
-        }}
-      </RouterContext.Consumer>
-    );
-  }
+        return React.createElement(component, {
+          ...rest,
+          href,
+          navigate() {
+            const method = replace ? history.replace : history.push;
+            method(to);
+          }
+        });
+      }}
+    </RouterContext.Consumer>
+  );
 }
 
 if (__DEV__) {
   const toType = PropTypes.oneOfType([PropTypes.string, PropTypes.object]);
-  const innerRefType = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
+  const refType = PropTypes.oneOfType([PropTypes.string, PropTypes.func]);
 
   Link.propTypes = {
-    innerRef: innerRefType,
+    innerRef: refType,
     onClick: PropTypes.func,
     replace: PropTypes.bool,
     target: PropTypes.string,
