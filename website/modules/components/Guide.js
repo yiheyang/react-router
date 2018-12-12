@@ -10,9 +10,9 @@ const Guide = ({ match, data }) => {
   const {
     params: { mod, header: headerParam, environment }
   } = match;
-  const doc = data.guides.find(doc => mod === doc.title.slug);
+  const doc = data.guides.find(doc => mod === decodeURI(doc.title.slug));
   const header =
-    doc && headerParam ? doc.headers.find(h => h.slug === headerParam) : null;
+    doc && headerParam ? doc.headers.find(h => decodeURI(h.slug) === headerParam) : null;
   return !doc ? (
     <Redirect to={`/${environment}`} />
   ) : (
@@ -28,7 +28,7 @@ const Guide = ({ match, data }) => {
             params: { header: slug }
           }
         }) => {
-          const header = doc.headers.find(h => h.slug === slug);
+          const header = doc.headers.find(h => decodeURI(h.slug) === slug);
           return header ? (
             <ScrollToDoc doc={doc} header={header} />
           ) : (

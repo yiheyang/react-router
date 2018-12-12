@@ -1,4 +1,4 @@
-# Static Routes
+# 静态路由
 
 Previous versions of React Router used static routes to configure your application's routing. This allows for inspection and matching of routes before rendering. Since v4 moved to dynamic components instead of route configs, some previous use-cases became less obvious and tricky.
 

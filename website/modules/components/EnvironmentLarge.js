@@ -92,7 +92,7 @@ const NavLinks = ({ data, environment }) => (
   <Block lineHeight="1.8" padding="10px">
     {data.examples && (
       <Block>
-        <Title>Examples</Title>
+        <Title>例子</Title>
         <Block paddingLeft="10px">
           {data.examples.map((item, i) => (
             <NavLink
@@ -106,7 +106,7 @@ const NavLinks = ({ data, environment }) => (
       </Block>
     )}
 
-    <Title>Guides</Title>
+    <Title>指南</Title>
     <Block paddingLeft="10px">
       {data.guides &&
         data.guides.map((item, i) => (

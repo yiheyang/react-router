@@ -1,4 +1,4 @@
-# Dealing with Update Blocking
+# 解决更新被阻止
 
 React Router has a number of location-aware components that use the current `location` object to determine what they render. By default, the current `location` is passed implicitly to components using React's context model. When the location changes, those components should re-render using the new `location` object from the context.
 

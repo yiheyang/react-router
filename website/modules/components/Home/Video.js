@@ -11,13 +11,7 @@ const Video = () => (
       background={DARK_GRAY}
       boxShadow="0px 10px 30px hsla(0, 0%, 0%, 0.5)"
     >
-      <iframe
-        width="100%"
-        height="100%"
-        src="https://www.youtube.com/embed/cKnc8gXn80Q"
-        frameBorder="0"
-        allowFullScreen={true}
-      />
+      <iframe height="100%" width="100%" src='http://player.youku.com/embed/XMzExMzg3NDQyMA==' frameborder="0" allowfullscreen="true"></iframe>
     </Block>
   </Block>
 );

@@ -1,4 +1,4 @@
-# Migrating from v2/v3 to v4
+# 从 v2/v3 迁移到 v4
 
 React Router v4 is a complete rewrite, so there is not a simple migration path. This guide will provide you with a number of steps to help you understand how to upgrade your application.
 

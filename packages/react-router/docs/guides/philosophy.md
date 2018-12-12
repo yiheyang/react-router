@@ -1,4 +1,4 @@
-# Philosophy
+# 设计思想
 
 This guide's purpose is to explain the mental model to have when using React Router. We call it "Dynamic Routing", which is quite different from the "Static Routing" you're probably more familiar with.
 

@@ -19,11 +19,11 @@ export default {
   ],
 
   guides: [
-    require("../../../packages/react-router-dom/docs/guides/quick-start.md"),
-    require("../../../packages/react-router-dom/docs/guides/basic-components.md"),
-    require("../../../packages/react-router-dom/docs/guides/server-rendering.md"),
-    require("../../../packages/react-router-dom/docs/guides/code-splitting.md"),
-    require("../../../packages/react-router-dom/docs/guides/scroll-restoration.md"),
+    require("../../../packages/react-router-dom/docs/guides/快速开始.md"),
+    require("../../../packages/react-router-dom/docs/guides/基本组件.md"),
+    require("../../../packages/react-router-dom/docs/guides/服务端渲染.md"),
+    require("../../../packages/react-router-dom/docs/guides/代码分割.md"),
+    require("../../../packages/react-router-dom/docs/guides/滚动恢复.md"),
     require("../../../packages/react-router/docs/guides/philosophy.md"),
     require("../../../packages/react-router/docs/guides/testing.md?web"),
     require("../../../packages/react-router/docs/guides/redux.md"),
@@ -33,85 +33,85 @@ export default {
 
   examples: [
     {
-      label: "Basic",
+      label: "基本",
       slug: "basic",
       load: require("../examples/Basic?bundle"),
       loadSource: require("../examples/Basic.js?prismjs")
     },
     {
-      label: "URL Parameters",
+      label: "URL 参数",
       slug: "url-params",
       load: require("../examples/Params?bundle"),
       loadSource: require("../examples/Params.js?prismjs")
     },
     {
-      label: "Redirects (Auth)",
+      label: "跳转 (授权)",
       slug: "auth-workflow",
       load: require("../examples/Auth?bundle"),
       loadSource: require("../examples/Auth.js?prismjs")
     },
     {
-      label: "Custom Link",
+      label: "自定义链接",
       slug: "custom-link",
       load: require("../examples/CustomLink?bundle"),
       loadSource: require("../examples/CustomLink.js?prismjs")
     },
     {
-      label: "Preventing Transitions",
+      label: "阻止过渡",
       slug: "preventing-transitions",
       load: require("../examples/PreventingTransitions?bundle"),
       loadSource: require("../examples/PreventingTransitions.js?prismjs")
     },
     {
-      label: "No Match (404)",
+      label: "没有匹配 (404)",
       slug: "no-match",
       load: require("../examples/NoMatch?bundle"),
       loadSource: require("../examples/NoMatch.js?prismjs")
     },
     {
-      label: "Recursive Paths",
+      label: "递归路径",
       slug: "recursive-paths",
       load: require("../examples/Recursive?bundle"),
       loadSource: require("../examples/Recursive.js?prismjs")
     },
     {
-      label: "Sidebar",
+      label: "侧边栏",
       slug: "sidebar",
       load: require("../examples/Sidebar?bundle"),
       loadSource: require("../examples/Sidebar.js?prismjs")
     },
     {
-      label: "Animated Transitions",
+      label: "动画过渡",
       slug: "animated-transitions",
       load: require("../examples/Animation?bundle"),
       loadSource: require("../examples/Animation.js?prismjs")
     },
     {
-      label: "Ambiguous Matches",
+      label: "模糊匹配",
       slug: "ambiguous-matches",
       load: require("../examples/Ambiguous?bundle"),
       loadSource: require("../examples/Ambiguous.js?prismjs")
     },
     {
-      label: "Route Config",
+      label: "路由配置",
       slug: "route-config",
       load: require("../examples/RouteConfig?bundle"),
       loadSource: require("../examples/RouteConfig.js?prismjs")
     },
     {
-      label: "Modal Gallery",
+      label: "Modal 图库",
       slug: "modal-gallery",
       load: require("../examples/ModalGallery?bundle"),
       loadSource: require("../examples/ModalGallery.js?prismjs")
     },
     {
-      label: "StaticRouter Context",
+      label: "静态路由上下文",
       slug: "static-router",
       load: require("../examples/StaticRouter?bundle"),
       loadSource: require("../examples/StaticRouter.js?prismjs")
     },
     {
-      label: "Query Parameters",
+      label: "查询参数",
       slug: "query-parameters",
       load: require("../examples/QueryParams?bundle"),
       loadSource: require("../examples/QueryParams.js?prismjs")

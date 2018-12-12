@@ -49,10 +49,10 @@ const NavBar = () => (
       <Inline> / </Inline>
       <Inline
         component="a"
-        props={{ href: "https://github.com/ReactTraining/react-router" }}
+        props={{ href: "/" }}
         color={LIGHT_GRAY}
       >
-        React Router
+        React Router 中文网
       </Inline>
     </Block>
     <Row fontSize="12px">
@@ -83,7 +83,7 @@ const Banner = () => (
               fontSize={isSmallScreen ? "80%" : "120%"}
               fontWeight="bold"
             >
-              Learn once, Route anywhere
+              学习一次，路由 Anywhere
             </Block>
             <Block
               component="h2"
@@ -99,20 +99,15 @@ const Banner = () => (
             margin={`${isSmallScreen ? 20 : 20}px 0`}
             fontSize={isSmallScreen ? "80%" : null}
           >
-            Components are the heart of React's powerful, declarative
-            programming model. React Router is a collection of{" "}
-            <b>navigational components</b> that compose declaratively with your
-            application. Whether you want to have <b>bookmarkable URLs</b> for
-            your web app or a composable way to navigate in <b>React Native</b>,
-            React Router works wherever React is rendering--so take your pick!
+            组件是 React 强大、声明式编程模型的核心。React Router 是<b>可导航组件</b>的集合，能够声明式地与你的应用相结合。不论是想给你的 Web 应用添加<b>书签式的 URL</b>的特性，还是整合到你的 <b>React Native</b> 项目中实现导航, 只要 React 在渲染， React Router 就会帮上你的忙～赶紧来尝试一下吧！
           </Block>
 
           <Row>
             <Button to="/web" small={isSmallScreen}>
-              Web
+              Web文档
             </Button>
             <Button to="/native" small={isSmallScreen}>
-              Native
+              Native文档
             </Button>
           </Row>
         </Block>

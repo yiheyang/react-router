@@ -18,7 +18,7 @@ const resolve = require("resolve-pathname");
 const routerDelegationClassName = "internal-link";
 
 // charmap gets rid of weird <Route> -> lessRoutegreater
-const slugify = s => slug(s, { charmap: {} });
+const slugify = s => encodeURI(s);
 
 const aliases = {
   js: "jsx",
@@ -47,10 +47,7 @@ const extractHeaders = ($, level, type) =>
       const text = $e.text();
       return {
         text: text,
-        slug:
-          type === "api" && level === "h1"
-            ? slugify(text)
-            : slugify(text).toLowerCase()
+        slug: slugify(text)
       };
     })
     .get();
@@ -125,7 +122,7 @@ const makeHeaderLinks = ($, moduleSlug, environment, type) => {
   $("h2").each((i, e) => {
     const $e = $(e);
     const rawSlug = slugify($e.text());
-    const slug = rawSlug.toLowerCase();
+    const slug = rawSlug;
     $e.attr("id", `${moduleSlug}-${slug}`);
     const children = $e.html();
     const link = $(

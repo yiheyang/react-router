@@ -1,7 +1,6 @@
-# Testing
+# 测试
 
-React Router relies on React context to work. This affects how you can
-test your components that use our components.
+React Router 依靠 React 上下文工作。这表示您可以用我们的组件来调试你的组件。
 
 ## Context
 

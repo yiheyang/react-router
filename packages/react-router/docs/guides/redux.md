@@ -1,4 +1,4 @@
-# Redux Integration
+# 整合 Redux
 
 Redux is an important part of the React ecosystem. We want to make the integration of React Router and Redux as seamless as possible for people wanting to use both.
 

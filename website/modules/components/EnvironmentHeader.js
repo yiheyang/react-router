@@ -42,7 +42,7 @@ const Tabs = () => (
       borderTopRightRadius="3px"
       borderBottomRightRadius="3px"
     >
-      Core
+      核心
     </Tab>
   </Row>
 );
@@ -57,8 +57,8 @@ const Branding = () => (
       fontWeight="bold"
       fontSize="90%"
     >
-      <Inline component="a" props={{ href: "https://reacttraining.com" }}>
-        React Training
+      <Inline component="a" props={{ href: "/" }}>
+        React Router 中文网
       </Inline>
       <Inline> / </Inline>
       <Inline
@@ -66,7 +66,7 @@ const Branding = () => (
         props={{ href: "https://github.com/ReactTraining/react-router" }}
         color={LIGHT_GRAY}
       >
-        React Router
+        Github
       </Inline>
     </Block>
   </Col>
